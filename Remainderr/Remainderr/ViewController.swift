@@ -7,14 +7,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NewTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         newTaskButton()
+        view.addSubview(newTaskView)
     }
-    
+
+    private let newTaskView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.layer.cornerRadius = 16
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.systemGray3.cgColor
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     func newTaskButton() {
         
